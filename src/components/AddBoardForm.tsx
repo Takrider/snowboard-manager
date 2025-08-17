@@ -44,7 +44,7 @@ export default function AddBoardForm({ onAddBoard }: AddBoardFormProps) {
         />
         <select
           value={status}
-          onChange={(e) => setStatus(e.target.value as Snowboard['status'])}
+          onChange={(e) => setStatus(e.target.value as SnowboardStatus)}
           className="bg-gray-700 text-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           {SNOWBOARD_STATUSES.map((s) => (
