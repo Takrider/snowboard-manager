@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Snowboard, SNOWBOARD_STATUSES } from '@/types';
+import { Snowboard, SnowboardStatus, SNOWBOARD_STATUSES } from '@/types';
 
 type AddBoardFormProps = {
   onAddBoard: (newBoard: Omit<Snowboard, 'id'>) => void;
@@ -10,7 +10,7 @@ type AddBoardFormProps = {
 export default function AddBoardForm({ onAddBoard }: AddBoardFormProps) {
   const [brand, setBrand] = useState('');
   const [modelName, setModelName] = useState('');
-  const [status, setStatus] = useState(SNOWBOARD_STATUSES[0]);
+  const [status, setStatus] = useState<SnowboardStatus>(SNOWBOARD_STATUSES[0]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
